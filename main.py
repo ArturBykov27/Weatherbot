@@ -1,7 +1,6 @@
 import datetime
 
 import requests
-import time
 import logging
 from aiogram import Bot, Dispatcher, executor, types
 API_TOKEN = '5234216216:AAHKIEW_U5kvmDLhT-e6pHpdJWTXPKbL4qs'
