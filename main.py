@@ -8,7 +8,7 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
-    await message.reply("Привет, епты! Теперь буду показывать вам погоду на сейчас. Слава Украине!")
+    await message.reply("Привет! Теперь буду показывать вам погоду на сейчас. Слава Украине!")
 
 @dp.message_handler()
 async def weatherresponse(message):
