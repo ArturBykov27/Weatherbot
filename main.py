@@ -21,7 +21,7 @@ async def weatherresponse(message):
     wth = requests.get('https://api.openweathermap.org/data/2.5/weather',params)
     result = wth.json()
     lon = result['coord']['lon']
-    tempnow = int(result['main']['temp'])
+    tempnow = (result['main']['temp'])
     a = ['погода','Погода','Погоде','погоде','погоду','Погоду']
     if tempnow >=0:#подставляет градусов тепла/мороза
         tempword = '°С тепла'
