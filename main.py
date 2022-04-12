@@ -38,7 +38,7 @@ async def weatherresponse(message):
 
     for a1 in a:
         if a1 in message.text:
-            await message.answer('Привет! \nСегодня ' +str(datetime.datetime.now().strftime('%d,%m,%y,%H,%M'))+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'
+            await message.answer('Привет! \nСегодня ' +str(datetime.datetime.now().strftime('%d,%m,%y  %H:%M'))+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'
                              +'Минимальная температура сегодня — ' + tempmin + '. Максимум — ' + tempmax + '.\n'+
                              'Скорость ветра — '+ str(windspd) +'м/с. ' + windrec + ".\n"+
                              "Всё давай, хорошего дня)")
