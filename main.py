@@ -2,6 +2,8 @@ import datetime
 import requests
 import logging
 from aiogram import Bot, Dispatcher, executor, types
+import pytz
+
 API_TOKEN = '5234216216:AAHKIEW_U5kvmDLhT-e6pHpdJWTXPKbL4qs'
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
@@ -33,7 +35,8 @@ async def weatherresponse(message):
     else:
         windrec = 'Тебя не сдует.'
     city = str(result['name'])
-    time=str(datetime.datetime.now().strftime('%d.%m.%y  %H:%M'))
+    time=str(datetime.datetime.now().strftime('%d.%m.%y'))
+
     for a1 in a:
         if a1 in message.text:
             await message.answer('Привет! \nСегодня ' +time+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'+
