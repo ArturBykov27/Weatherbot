@@ -33,10 +33,10 @@ async def weatherresponse(message):
     else:
         windrec = 'Тебя не сдует.'
     city = str(result['name'])
-
+    time=str(datetime.datetime.now().strftime('%d.%m.%y  %H:%M'))
     for a1 in a:
         if a1 in message.text:
-            await message.answer('Привет! \nСегодня ' +str(datetime.datetime.now(pytz.timezone('US/Pacific')).strftime('%d.%m.%y  %H:%M'))+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'+
+            await message.answer('Привет! \nСегодня ' +time+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'+
                              'Скорость ветра — '+ str(windspd) +'м/с. ' + windrec + ".\n"+
                              "Всё давай, хорошего дня)")
 
