@@ -33,7 +33,7 @@ async def weatherresponse(message):
     else:
         windrec = 'Тебя не сдует.'
     city = str(result['name'])
-    time=str(datetime.datetime.now().strftime('%d.%m.%y  %H:%M'))
+    time=str(datetime.datetime.now().rfc822())
     for a1 in a:
         if a1 in message.text:
             await message.answer('Привет! \nСегодня ' +time+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'+
