@@ -20,15 +20,13 @@ async def weatherresponse(message):
     }
     wth = requests.get('https://api.openweathermap.org/data/2.5/weather',params)
     result = wth.json()
-    lon = result['coord']['lon']
     tempnow = (result['main']['temp'])
-    a = ['погода','Погода','Погоде','погоде','погоду','Погоду']
+    a = ['погода','Погода','Погоде','погоде','погоду','Погоду','gjujlf','Gjujlf']
     if tempnow >=0:#подставляет градусов тепла/мороза
         tempword = '°С тепла'
     else:
         tempword = '°С мороза'
-    tempmin = str (result['main']['temp_min'])
-    tempmax = str (result['main']['temp_max'])
+
     windspd = result['wind']['speed']
     if windspd >= 5:
         windrec = 'Лучше накинь капюшон'
@@ -38,8 +36,7 @@ async def weatherresponse(message):
 
     for a1 in a:
         if a1 in message.text:
-            await message.answer('Привет! \nСегодня ' +str(datetime.datetime.now().strftime('%d,%m,%y  %H:%M'))+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'
-                             +'Минимальная температура сегодня — ' + tempmin + '. Максимум — ' + tempmax + '.\n'+
+            await message.answer('Привет! \nСегодня ' +str(datetime.datetime.now(pytz.timezone('US/Pacific')).strftime('%d.%m.%y  %H:%M'))+' \nВ '+ city + 'е сейчас '+ str(tempnow)+tempword+'.\n'+
                              'Скорость ветра — '+ str(windspd) +'м/с. ' + windrec + ".\n"+
                              "Всё давай, хорошего дня)")
 
